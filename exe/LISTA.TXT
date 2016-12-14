@@ -1,0 +1,51 @@
+
+зддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+Ё         Lista fisierelor programului ARTIST           Ё
+Ё                Autor : Marian Veteanu                 Ё
+юддддддддддддддддддддддддддддддддддддддддддддддддддддддды
+
+
+< driver de mouse >
+ARTIST  .EXE
+
+ARTIST  .DOC
+MANUAL  .DOC
+SURSE   .DOC
+
+EFECTG0 .PRC
+EFECTG1 .PRC
+EFECTG2 .PRC
+EFECTG3 .PRC
+EFECTG4 .PRC
+EFECTG5 .PRC
+EFECTG6 .PRC
+EFECTG7 .PRC
+EFECTS0 .PRC
+EFECTS1 .PRC
+EFECTS10.PRC
+EFECTS2 .PRC
+EFECTS3 .PRC
+EFECTS4 .PRC
+EFECTS5 .PRC
+EFECTS6 .PRC
+EFECTS7 .PRC
+EFECTS8 .PRC
+EFECTS9 .PRC
+SPRAY   .PRC
+WTG     .PRC
+
+MINA    .CUR
+SAGEATA .CUR
+SEMN    .CUR
+SPRAY   .CUR
+TIMP    .CUR
+UMPLE   .CUR
+
+LISTA   .TXT
+
+зддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+Ё   Pentru o functionare corecta a programului ARTIST   Ё
+Ё     este bine sa aveti in directorul ARTIST toate     Ё
+Ё                   aceste fisiere                      Ё
+юддддддддддддддддддддддддддддддддддддддддддддддддддддддды
+

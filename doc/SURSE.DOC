@@ -1,0 +1,229 @@
+
+      ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+      บ                                                                 บ
+      บ                         Artist 1.0                              บ
+      บ               Autor : Marian Veteanu  , Pitesti                 บ
+      บ                                                                 บ
+      ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+     In acest fisier de documentatie veti gasi informatiile necesare pentru
+intelegerea textelor sursa ale programului utilitar ARTIST 1.0 scris de
+Marian Adrian Veteanu . Pentru informatii in legatura cu modul de utilizare
+al acestui program cit si modul de generare al fisierelor .PAS cititi si
+fisierul ARTIST.DOC
+
+
+     ARTIST   este   un   program   utilitar   pentru   programare   vizuala.
+Datorita acetui program ,utilizatorul  are  posibilitatea  sa-si  creeze
+propriile programe de grafica in  limbajul  Borland  Pascal  7.0  intr-un
+timp  foarte scurt lucrind sub o interfata  grafica  asemanatoare  cu  cea  a
+programului  PaintBrush  de sub Windows.
+     Acest utilitar a fost realizat in limbajul PASCAL si a fost compilat
+cu Borland Pascal 7.0 . Programul este realizat utilizind programarea
+structurata, folosindu-se lucrul cu proceduri si functii.
+     Structura programului este urmatoarea:
+
+{$A+,B-,D-,F-,G+,I+,L-,O-,P-,Q-,R-,S-,T-,V-,X-,Y-}
+
+{$M 16384,0,655360}
+{$IFDEF CPU87} {$N+,E-} {$ELSE} {$N+,E+} {$ENDIF}
+
+program Artist_Mouse;
+
+uses graph,crt,printer,mouse,dos,
+     fonturi1,fonturi2,fonturi3;
+type
+   ...
+const
+   ...
+var
+   ...
+.............  { declararea procedurilor si functiilor}
+.............
+
+Begin
+
+VerificaMicroProcesor;
+VerificaHelp;
+InregistreazaDrivereSiFonturi;
+SareInDirectorulArtist;
+InitializareModGrafic;
+Prezentare;
+VerificaMouse;
+IntroducereNumeProgram;
+VerificaDacaSeApasaUnButon;
+
+End.
+
+     Dupa cum se observa programul foloseste pe linga unit-urile standard
+ale lui BP si unele unituri proprii.
+     In unitul <Mouse> se implementeaza principalele functii si proceduri
+necesare lucrului cu mouse-ul. Pentru asta au fost folosite functiile din
+intreruperea 33h ( intreruperea de mouse ). Cum sistemul DOS nu implementeaza
+aceasta intrerupere este necesar rularea inainte de programul ARTIST a unui
+driver de mouse ( de exemplu GMOUSE.COM ).
+     In unit-urile <Fonturi1> , <Fonturi2> si <Fonturi3> sau inclus seturile
+de caractere din BP 7.0 ( fisierele .CHR ) precum si driverul EGAVGA.BGI.
+Inainte de a se include aceste fisiere au fost transformate in fisiere .OBJ
+utilizind utilitarul BINOBJ.
+
+     Deoarece programul ARTIST a fost facut sa ruleze doar pe calculatoare cu
+microprocesoare compatibile cu I80286 acesta va detecta in faza de initiali-
+zare ๆP pe care ruleaza si in caz ca acesta nu este cel putin 80286 va afisa
+un mesaj de eroare si va reveni in sistemul de operare ( a fost luata acesta
+masura pentru a evita blocarea sistemului daca un utilizator l-a lansa de
+exemplu pe 8086 sau 8088 ). Detectarea ๆP se face in procedura:
+                  <  VerificaMicroProcesor;  >
+
+     Programul ARTIST accepta si parametrii pe linia de comanda, unul dintre
+acestia fiind < /? > care semnifica cererea de informatii pe scurt despre
+programul ARTIST. In  procedura < VerificaHelp; > se face o analiza a liniei
+de comanda in cautarea acestui parametru si in cazul localizarii se afiseaza
+o pagina de ajutor.
+
+     Urmatoarea procedura din corpul principal al programului este:
+                  <  InregistreazaDrivereSiFonturi; > ,
+aceasta fiind folosita de programul ARTIST doar in momentul compilarii sale
+( se verifica corectitudinea inregistrarii in fisierul .EXE a driverului
+EGAVGA si a fisierelor cu fonturi vectoriale ). Pentru ca programul sa nu dea
+nici o eroare in aceasta faza, este necesar ca fisierele .OBJ generate de
+programul BINOBJ din fisierele *.CHR si EGAVGA.BGI , sa se afle in directorul
+curent in care se afla si celelate surse ale programului ARTIST. S-a folosit
+acesta metoda de includere in fisierul .EXE a driverului grafic si a fontu-
+rilor vectoriale pentru ca utilitarul ARTIST sa poata fi folosit si de cei
+care nu au pe HARD-DISK compilatorul Borland Pascal.
+
+     Multe programe precum si celebrul WINDOWS afla la initializare catalogul
+in care se afla si apoi sare in acesta , acesta metoda fiind cea mai rapida
+si cea mai sigura pentru a-si gasi fisierele necesare rularii. Tot aceasta
+metoda este folosita si de programul ARTIST, subrutina care realizeaza acest
+lucru fiind procedura < SareInDirectorulArtist; >. Tot acesta procedura
+verifica si numele utilitarului. De exemplu daca cineva i-a schimbat numele
+din ARTIST.EXE n ARTY.EXE , programul 'refuza' sa ruleze.
+
+     Procedurile < InitializareModGrafic; > si < Prezentare; > se ocupa cu
+initializarea modului video VGA 640x480x16 si eventual cu prezentarea
+autorului si al programului sau in caz ca pe linia de comanda nu este prezent
+parametrul < /r > (acesta semnifica o initializare rapida ).
+
+     Dupa prezentare se verifica daca exista un driver de mouse instalat
+( procedura < VerificaMouse; > ).
+In caz contrar se afiseaza un mesaj de eroare si se revine in sistem. Daca nu
+ar fi fost facuta acesta verificare, atunci programul s-ar fi blocat ca
+urmare a incercarii apelarii functiilor din intreruperea 33h ( subrutina
+care trateaza aceasta intrerupere fiind instalata de driverul de mouse).
+
+     Daca pe linia de comanda nu a fost specificat numele fisierului .PAS
+care se doreste a fii generat , atunci programul ARTIST cere utilizatorului
+numele acestuia ( Procedura  < IntroducereNumeProgram; > ). Se va face o
+analiza a numelui introdus pentru a vedea daca este un nume de fisier valid
+si in caz afirmativ se va verifica extensia acestuia ( in caz ca nu exista
+se considera extesia .PAS ). Daca la cererea programului de a introduce
+numele fisierului se raspunde cu <ENTER> , atunci se va considera numele
+fisierului ca fiind REZULTAT.PAS.
+
+     Dupa toate aceste initializari se intra in procedura :
+                 < VerificaDacaSeApasaUnButon; >,
+procedura care verifica daca utilizatorul a apasat butonul sting sau drept al
+mouse-ului. In caz ca butonul apasat este cel sting si cursorul mouse-ului se
+afla pe bara cu butoane, atunci se preda controlul procedurii care trateaza
+comanda asociata butonului apasat.
+Daca butonul apasat este cel drept, atunci daca pointer-ul mouse-ului se afla
+in zona de desen se va fisa un ceas amalogic si unul digital, iar daca
+pointerul se afla deasupra unui buton se va apela help-ul senzitiv al
+programului ARTIST care va oferii scute informatii cu privire la functia
+butonului respectiv.
+     Iata cum arata procedura < VerificaDacaSeApasaUnButon; > :
+
+Procedure VerificaDacaSeApasaUnButon;
+begin
+repeat
+FereastraCuCeas;
+If mousey>430 then Begin
+If LeftPressed1 then Begin dr:=mousex;mo:=mousey;setwritemode(copyput);
+   If (mo>430) and (mo<451) then Begin com:=(dr+40) div 40;bell;marcbuton;
+   ...
+   End;
+   If (mo>451) and (mo<638) then Begin culo:=dr div 40;cl:=com;com:=17;bell;marcbuton;End;
+End;
+If RightPressed1 then Begin dr:=mousex;mo:=mousey;setwritemode(copyput);
+   If (mo>430) and (mo<451) then com:=17+(dr+40) div 40;
+   If (mo>451) and (mo<638) then com:=33+(dr+40) div 40;bell;
+End;
+End;
+...
+mark(heap);
+Case com of
+1:  sf;
+2:  alegeefect;
+...
+17: setcul;
+18     : help('Iese din programul ARTIST');
+19     : help('Sterge plansa curenta');
+...
+34..49 : help('Selecteaza culoarea ( '+culs[com-34]+' )');
+
+50 : bara;            { Extra comenzi }
+51 : triunghi;        { Extra comenzi }
+52 : paralelogram;    { Extra comenzi }
+
+End;
+release(heap);
+until false;
+end;
+
+      Desi fiecare procedura are grija sa lase heap-ul asa cum era inainte de
+apelarea ei , totusi a fost luata o masura suplimentara de siguranta prin
+folosirea incadrarea corpului principal al procedurii intre < mark(heap) >
+si < release(heap) > .
+      Programul foloseste pentru afisarea abiectelor grafice modul CopyPut,
+si pentru asta se foloseste instructiunea < SetWriteMode(CopyPut); >
+      Principalele obiecte grafice pe care utilizatorul le alege sunt:
+             - bara
+             - triunghi
+             - paralelogram
+             - curbe trasate
+             - cerc
+             - elipsa
+      Toate aceste obiecte sunt desenate pe ecran intr-un mod animat.
+Pentru primele patru au fost folosite procedurile Line si Rectangle din
+unit-ul Graph impreuna cu modul de scriere XorPut , iar pentru ultimele
+doua s-au folosit proceduri speciale definite in ARTIST, utilizindu-se
+ecuatiile analitice ale cercului si elipsei :
+
+      Pentru cerc   : x = x0 + r * cos(t)
+                      y = y0 + r * sin(t)
+
+      Pentru elipsa : x = x0 + rx * sin(t)
+                      y = y0 + ry * sin(t)  , t ๎ { 0...2ใ }
+
+      In aceste relatii x0 si y0 reprezinta coordonatele centrului cercului
+sau ale elipsei. Iar r,rx,ry raza cercului respectiv razele elipsei.
+Am folosit acesta metoda deoarece procedurile Circle si Ellipse din unit-ul
+Graph nu tin seama de modelul de linie ales, iar in programul ARTIST formele
+grafice animate sunt desenate punctat pina cind se fixeaza toate punctele de
+control. Totusi in fisirul generat se va folosii pentru desenarea elipaselor
+si a cercurilor procedurile standard ale Pascal-ului : Circle & Ellipse.
+
+      Programul ARTIST foloseste pe linga fisierul executabil ARTIST.EXE si
+urmatoarele fisiere care trebuie sa se afle in directorul ARTIST.
+      -  *.CUR
+      -  *.PRC
+      Fisierele .CUR au lungime fixa de 68 de bytes si reprezinta cursoarele
+pe care ARTIST le foloseste atunci cind se alege o optiune de desenare.
+De exemplu fisierul SPRAY.CUR reprezinta 'tubul de spray' pe care programul
+il foloseste in locul sagetii obisnuite atunci cind a fost aleasa comanda
+< SPRAY >. In aceste fisiere .CUR sunt salvate coordonatele punctului cald
+al mouseului (2+2=4 bytes) precum si masca cursorului si masca ecranului
+(32+32=64 bytes) . In total 4+64=68 bytes care reprezinta chiar lungimea
+fisierului .CUR
+      Fisierele .PRC au lungime variabila si reprezinta textul sursa in
+limbajul Pascal al procedurilor pe care ARTIST le va introduce in fisierul
+.PAS generat in momentul in care utilizatorul a ales o comanda ce necesita
+apelul unei proceduri ce nu e standard in Borland Pascal 7.0 . Introducerea
+in fisier a acestei proceduri este invizibila pentru utilizator.
+      Fisierele EFECTG...PRC reprezinta diverse efecte de stergere a plansei
+care pot fi alese de utilizator intr-un program de tip prezentare,iar fisierele
+EFECTS...PRC reprezinta efecte diferite efecte sonore.
+
+      
