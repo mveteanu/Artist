@@ -1,0 +1,663 @@
+
+      ╔═════════════════════════════════════════════════════════════════╗
+      ║                                                                 ║
+      ║                         Artist 1.0                              ║
+      ║               Autor : Marian Veteanu  , Pitesti                 ║
+      ║                                                                 ║
+      ╚═════════════════════════════════════════════════════════════════╝
+
+     In acest fisier de documentatie veti gasi informatiile necesare pentru
+instalarea si folosire folosirea programului ARTIST 1.0 scris de Marian
+Adrian Veteanu .
+
+     Principalele capitole din acest fisier sunt :
+
+        ┌─────────────────────────────────────────────────────┐
+        │  - Prezentarea generala a programului ARTIST        │
+        ╞═════════════════════════════════════════════════════╡
+        │  - Configuratia minima ceruta de ARTIST             │
+        ╞═════════════════════════════════════════════════════╡
+        │  - Despre modul de utilizare al programului         │
+        ╞═════════════════════════════════════════════════════╡
+        │  - Despre structura fisierului .PAS creat           │
+        └─────────────────────────────────────────────────────┘
+
+     Pentru informatii in legatura cu modul de realizare al acestui program
+cititi si fisierul SURSE.DOC
+
+
+                      ┌──────────────────────────────┐
+                      │     Prezentarea generala a   │
+                      │       programului ARTIST     │
+                      └──────────────────────────────┘
+
+
+     ARTIST   este   un   program   utilitar   pentru   programare   vizuala.
+Datorita acetui program ,utilizatorul  are  posibilitatea  sa-si  creeze
+propriile programe de grafica in  limbajul  Borland  Pascal  7.0  intr-un
+timp  foarte scurt lucrind sub o interfata  grafica  asemanatoare  cu  cea  a
+programului  PaintBrush  de sub Windows.
+     Creerea  unui  program  este  foarte usoara datorita meniurilor clare
+prin  care  utilizatorul  navigheaza  doar  cu  ajutorul mouse-ului. Cel care
+lucreaza  cu  acest  program nu are nevoie de nici o notiune de programare in
+limbajul  Pascal  sau  oricare  alt  limbaj. Tot ceea ce are de facut este sa
+deseneze  pe  ecran  cu ajutorul mouse-ului diverse obiecte grafice, intocmai
+ca  in  orice  program  de  desenat de sub mediul DOS sau Windows (de exemplu
+PaintBrush,  Fractal  Dessign)  ,  pentru  ca  in  momentul in care paraseste
+acest  utilitar  sa  gaseasca pe hard-disk un fisier .PAS care odata compilat
+si   lansat   in   executie  sa  faca  exact  ceea  ce  a  desenat  pe  ecran
+utilizatorul.  'Artist'  este  foarte util atit incepatorilor care nu au nici
+o  notiune  despre  grafica  in  limbajul  Pascal  ,  cit  si programatorilor
+avansati  care  doresc  sa  faca  programe  de  grafica  (animatie)  deoarece
+gratie  acestui  utilitar  nu  mai  este  necesar  sa  faca atitea calcule si
+incercari  pentru  a  afla  coordonatele  si  parametii  doriti. Tot cu acest
+program  pot  fi  realizate  programe  de prezentari grafice folosind grafica
+VGA  640x480x16  cu  ajutorul  unei optiuni a acestui utilitar de a creea mai
+multe  planse  in  cadrul  aceluiasi  program  separate  eventual  de diverse
+efecte  sonore  si  de  stergere  dinamica  a  ecranului, alese de utilizator
+dintr-o  gama  variata  de  efecte  predefinite.  Acest  program mai are si o
+functie  secundara  care  permite  celui care lucreaza sa scoata la imprimana
+plansa  pe  care  a  creat-o  (  programul  suporta imprimante compatibile cu
+Epson FX-1050 ).
+
+
+
+
+                      ┌──────────────────────────────┐
+                      │   Configuratia minima ceruta │
+                      │           de ARTIST          │
+                      └──────────────────────────────┘
+
+
+     Configuratia minima pentru rularea acestui program este :
+        - un calculator cu microprocesor cel putin 80286;
+        - monitor VGA
+        - mouse
+        - driver de mouse (de exemplu GMOUSE);
+        - sistemul de operare DOS 3.0 sau alte versiuni ulterioare.
+
+
+
+
+                      ┌──────────────────────────────┐
+                      │   Despre modul de utilizare  │
+                      │        al programului        │
+                      └──────────────────────────────┘
+
+
+     Programul  se  lanseaza  in  executie  cu  comanda  ARTIST  introdusa la
+promptul DOS. Este permisa si introducerea de parametrii pe linia de comanda,
+informatii  succinte  despre  utilizarea  acestora  obtinindu-se dindu-se
+comanda  ARTIST  /?. Sintaxa pe care o permite acest utilitar este:
+
+                  ARTIST [/?] [/r] [program.pas]
+
+  Unde  :  /?            - permite  obtinerea de informatii despre lansarea
+                           acestui program de la promptul DOS;
+           /m            - anuleaza producerea de sunete la apasarea butoanelor
+           /r            - permite initializarea rapida a programului ,
+                           sarindu-se peste partea de demonstratie;
+           program.pas   - reprezinta numele fisierului .PAS care va fi creat
+                           de  catre ARTIST. In cazul in care acest parametru
+                           lipseste  se  va  cere in partea de initializare a
+                           programului numele fisierului ce va fi creat.
+
+    De  exemplu  urmatoarea  comanda  introdusa  la  promptul DOS va lansa in
+executie  utilitarul  ARTIST  sarind  peste demonstratie si peste partea care
+cere  introducerea  numelui  fisierului  ce  va  fi  creat  ( deoarece numele
+acestuia este luat din linia de comanda):
+
+                   ARTIST /r REZULTAT.PAS
+
+    Dupa  ce  a fost lansat in executie si s-au facut initializarile necesare
+programul  afiseaza o bara cu butoane (in reprezentare 3D) in partea de jos a
+ecranului  pe  care  se pot citi diverse mesaje. Pentru lansarea unei anumite
+comenzi utilizatorul se foloseste de mouse. Astfel cu un singur clic efectuat
+cu butonul sting al mouse-ului pe casuta respectiva va lansa comanda asociata
+butonului respectiv. Datorita optiunii de " Help senzitiv " cel care lucreaza
+cu  acest  program si a uitat ce face fiecare buton din bara de comanda poate
+executa  un  clic  folosind  butonul  drept al mouse-ului si astfel va obtine
+scurte informatii cu privire la functia acelui program. Daca butonul drept al
+mouse-ului  a  fost apasat in zona de sus sau mijloc a ecranului atunci va fi
+afisat  un  ceas  analogic  si  unul  digital , ora ,minutul si secunda fiind
+obtinute din ceasul calculatorului.
+    Deci butonul sting al mouse-ului este folosit pentru lansarea comenzilior
+in timp ce butonul drept pentru obtinerea de informatii on-line.
+
+    In bara cu optiuni se afla urmatoarele butoane , cu posibilitatea de a
+optine un scurt ajutor in legatura cu ceea ce face butonul respectiv daca se
+efectueaza un clic cu butonul drept al mouse-ului in acea zona:
+
+            ┌──────┐
+          1.│Iesire│     -   Paraseste programul ARTIST si revine in sistemul
+            └──────┘       de operare DOS.
+                           Dupa ce reveniti in sistem veti observa pe
+                           hard-disk-ul calculatorului un fisier ce are numele
+                           pe care l-ati introdus la lansarea utilitarului
+                           ( sau numele REZUTAT.PAS daca ati apasat ENTER),
+                           acest fisier fiind un program Pascal, care odata
+                           compilat si lansat in executie va desena tot ce
+                           ati creat dumneavoastra pe ecran). Pentru
+                           compilarea acestui fisier produs de catre ARTIST
+                           se recomanda folosirea pachetului de programe
+                           Borland Pascal 7.0
+
+
+            ┌──────┐
+          2.│ Nou  │     -   Incepe o noua plansa
+            └──────┘       Programul permite alegerea unui efect sonor sau
+                           grafic ( 'de dizolvare' a plansei) ,efect care va
+                           fi apelat in programul creat in momentul in care
+                           se trece la o alta plansa, permitindu-se astfel
+                           efectuarea de prezentari de grafica si sunete.
+
+            ┌──────┐
+          3.│TipFig│     -   Permite selectarea tipului de figura (goala sau
+            └──────┘       plina ) care va fi folosit in momentul desenarii
+                           de obiecte grafice (cercuri , elipse ,bare).
+                           De exemplu daca tipul de figura ales este 'gol',
+                           atunci in momentul desenarii unui cerc se va face
+                           un cerc obisnuit, in timp ce daca tipul figurii
+                           este 'plina' atunci va fi desenat un disc.
+
+            ┌──────┐
+          4.│TipSpr│     -   Permite alegerea tipului de spray folosit
+            └──────┘       ( programul punind la dispozitia utilizatorului un
+                           numar de 8 tipuri de spray diferite, dintre care
+                           unele sunt spray-uri multicolore )
+
+            ┌──────┐
+          5.│TipLin│     -   Permite selectarea tipului de linie folosit in
+            └──────┘       desenarea obiectelor grafice ( se selecteaza atit
+                           grosimea liniei cit si modelul acesteia)
+
+            ┌──────┐
+          6.│TipUmp│     -   Permite utilizatorului sa selecteze culoarea si
+            └──────┘       modelul de umplere al figurilor desenate ( sunt
+                           puse la dispozitia utilizatorului toate cele 16
+                           culori din paleta cit si 24 de tipuri diferite de
+                           umplere )
+
+            ┌──────┐
+          7.│TipTxt│     -   Permite utilizatorului sa selecteze marimea si
+            └──────┘       tipul fontului folosit la scrierea textelor,
+                           selectarea facindu-se intr-un mod foarte comod,
+                           pentru cel ce foloseste acest program, gratie
+                           optiunii de "preview" pe care o are programul.
+                           Toate cele 11 fonturi folosite sunt incluse in
+                           fisierul executabil astfel incit nu sunt necesare
+                           alte fisiere externe.
+
+            ┌──────┐
+          8.│Trasat│     -   Dupa ce s-a ales aceasta optiune utlizatorul
+            └──────┘       trebuie sa se deplaseze in zona de lucru unde cu
+                           cu ajutorul mouse-ului poate trasa diverse curbe
+                           tinind butonul sting al mouse-ului apasat.
+
+            ┌──────┐
+          9.│Linie │     -   Cu ajutorul acestei comenzi se permite desenarea
+            └──────┘       de segmente de dreapta fixindu-se cu cite un clic
+                           pe butonul sting al mouse-ului extremitatile
+                           segmentului. Desenarea unui segment ca de altfel
+                           a tuturor obiectelor grafice se face foarte comod
+                           datorita animarii obiectului in timpul desenului
+                           (animatie asemanatoare cu cea facuta de PaintBrush
+                           la desenarea obiectelor)
+
+            ┌──────┐
+         10.│Figuri│     -   Apasarea acestui buton are ca rezultat deschide-
+            └──────┘       rea unei ferestre din care utilizatorul poate
+                           selecta figura poligonala pe care doreste sa o
+                           deseneze.
+                           Figurile disponibile in acest menu sunt:
+                                     - bara;
+                                     - triunghi;
+                                     - paralelogram;
+                           In desenarea acestora se va tine seama de culoarea
+                           grosimea si modelul liniei alese, iar pentru bara
+                           si de tipul de figura ales (goala sau plina).
+                           Desenarea acestor figuri se face foarte simplu si
+                           comod, prin fixarea punctelor de control ( cu
+                           ajutorul butonului sting al mouse-ului )pentru
+                           figura respectiva (pentru bara doua puncte,iar
+                           pentru triunghi si paralelogram cite trei puncte)
+                           Desenarea se face intr-un mod animat;
+
+            ┌──────┐
+         11.│Cerc  │     -   Alegind aceasta comanda utilizatorul are
+            └──────┘       posibilitatea sa deseneze cercuri de diferite raze
+                           Pentru aceasta trebuie fixat centrul cercului
+                           apoi este suficient sa se deplaseze mouse-ul pentru
+                           ca pe ecran sa apara un cerc ce isi modifica raza
+                           odata cu modificarea pozitiei mouse-ului,fixarea
+                           acestuia la marimea dorita realizindu-se printr-un
+                           simplu clic pe butonul sting.
+
+            ┌──────┐
+         12.│Elipsa│     -   Permite desenare de elipse de diferite
+            └──────┘       dimensiuni (se tine seama si de tipul figurii care
+                           a fost ales : gol sau plin). Pentru desenarea unei
+                           elipse se procedeaza asemanator ca la desenarea
+                           unui cerc ,singura diferenta fiind aceia ca
+                           modificarea pozitiei cursorului mouse-ului pe
+                           ecran determina modificarea ambelor 'raze' ale
+                           elipsei.
+            ┌──────┐
+         13.│Spray │     -   Acest efect este asemanator cu modelul produs
+            └──────┘       pe un perete de un spray. Se va tine seama de
+                           dimensiunea si de tipul de spray ales (simplu sau
+                           multicolor). Dupa alegerea acestei comenzi
+                           utilizatorul trebuie sa se deplaseze in suprafata
+                           de desen , unde tot ceea ce are de facut este
+                           sa apese butonul sting al mouse-ului in locul in
+                           care doreste sa deseneze acest efect.
+            ┌──────┐
+         14.│Umple │     -   Dupa selectarea acestei comenzi trebuie sa va
+            └──────┘       deplasati in interiorul unei zone delimitate de
+                           culoarea de scriere curenta si apoi sa apasati
+                           butonul sting al mouse-ului, acea zona fiind
+                           umpluta, utilizindu-se pentru aceasta modelul si
+                           culoarea de umplere selectata. Daca culoarea
+                           curenta cu care se deseneaza nu este aceiasi cu
+                           cea a figurii care delimiteaza acea zona, atunci
+                           inainte de a selecta aceasta comanda trebuie sa
+                           faceti un clic cu mouse-ul pe butonul ce contine
+                           culoarea conturului figurii.
+            ┌──────┐
+         15.│Print │     -   Datorita acestei comenzi utilizatorul are
+            └──────┘       posibilitatea sa scoata la imprimanta plansa pe
+                           care tocmai a desenat-o (sunt acceptate imprimante
+                           compatibile cu Epson FX-1050)
+            ┌──────┐
+         16.│Text  │     -   In urma executarii unui clic pe acest buton se
+            └──────┘       se poate observa ca de cursorul mouse-ului s-a
+                           'lipit' un dreptunghi punctat avind dimensiunile
+                           egale cu cele ale caracterelor selectate din
+                           meniul TipTxt. Dupa pozitionarea dreptunghiului
+                           in locul dorit trebuie apasat odata butonul sting
+                           al mouse-ului apoi trebuie introdus de la tastatura
+                           textul ce se doreste sa se afiseze la pozitia
+                           respectiva, terminarea facindu-se prin apasarea
+                           tastei ENTER sau prin executarea unui clic din
+                           butonul sting al mouse-ului. In scrierea textului
+                           se va tine seama de marimea caracterelor si de
+                           tipul de font ales.
+
+
+    Sub aceste butoane se mai pot observa inca 16 butoane avind in centru o
+mica portiune desenata cu o culoare diferita pe fiecare buton. Acestea sunt
+butoanele utilizate pentru selectarea culorii cu care se doreste desenarea
+obiectelor grafice, scrierea de texte si realizarea efectului de spray (daca
+tipul de spray selectat este cel intr-o singura culoare, altfel daca tipul de
+spray selectat este multicolor for fi folosite toate culorile disponibile).
+
+
+
+
+                      ┌──────────────────────────────┐
+                      │  Despre structura fisierului │
+                      │         .PAS creat           │
+                      └──────────────────────────────┘
+
+    Pentru crearea fisierului .PAS acest utilitar foloseste aproape toate
+procedurile incluse in unitul GRAPH din Borland Pascal 7.0 cit si unele
+proceduri si functii din unit-urile CRT si SYSTEM . Astfel in programul
+rezultat se vor intilni urmatoarele instructiuni , cuvinte rezervate ,
+proceduri si functii :
+
+
+              - Program
+              - Uses
+              - Var
+              - Const
+              - <Instructiunea de atribuire>
+              - Procedure
+              - Begin  ... End
+              - For .. To .. Do
+              - Repeat ... Until
+              - While  ... Do
+              - If .. Then
+              - Sound
+              - Delay
+              - Nosound
+              - KeyPressed
+              - ReadKey
+              - Halt
+              - ReadLn
+              - InitGraph
+              - CloseGraph
+              - ClearDevice
+              - PutPixel
+              - MoveTo
+              - Line
+              - LineTo
+              - Circle
+              - Ellipse
+              - FillEllipse
+              - Bar
+              - Rectangle
+              - OutTextXY
+              - GetBkColor
+              - GetColor
+              - GetFillSettings
+              - GetFillPattern
+              - SetTextStyle
+              - SetLineStyle
+              - SetFillStyle
+              - SetColor
+              - FloodFill
+
+       Textul sursa al unui program creat cu utilitarul ARTIST arata in felul
+urmator :
+
+ Program Grafica_Vizuala;
+
+{
+        ┌───────────────────────────────────────────────────┐
+        │ Program creat cu ajutorul utilitarului ARTIST 1.0 │
+        │                 (c) VMA soft                      │
+        └───────────────────────────────────────────────────┘
+}
+
+ uses graph,crt;
+ Const ... ;
+ Var dr,mo:integer;
+
+ Procedure ...;
+   Begin
+      ...
+   End;
+
+  ...
+
+ Procedure ...;
+   Begin
+      ...
+   End;
+
+ Begin
+   dr:=Vga;mo:=VgaHi;initgraph(dr,mo,'c:\bp\bgi');
+
+  ...
+  ...
+
+  Closegraph;
+ end.
+
+       O facilitate deosebit de importanta a programului ARTIST este aceea ca
+in fisierul creat nu include in sectiunea de declarare a constantelor  si in
+cea de declarare a procedurilor decit constantele si procedurile care sunt
+efectiv folosite de catre programul rezultat.
+       Datorita acestei facilitati textul sursa al programului este compact
+si foarte scurt.( Pentru a va da seama de acesta facilitate ginditi-va ca
+pina si unele limbaje de nivel inalt precum Pascal-ul includ in fisierul
+generat toate procedurile dintr-un anumit unit, chiar daca din acesta nu s-a
+utilizat decit una singura. De exemplu daca un programator foloseste procedura
+ChDir din unitul DOS al Pascalu-lui, atunci toate procedurile din acest unit
+vor fi incluse in fisierul .EXE , pe cind daca un utilizator al programului
+ARTIST doreste  sa  foloseasca  un  efect sonor sau grafic in programul ce va
+fi creat, atunci utilitarul va include in fisierul .PAS doar acel efect sonor
+sau grafic si nu toata biblioteca de efecte sonore si grafice pe care o
+detine .)
+
+       Pentru ca cel care va folosi acest fisier sa-l inteleaga mai bine,
+utilitarul ARTIST pagineaza intr-un mod frumos textul sursa al programului
+si de asemenea include pe marginea programului si unele comentarii.
+
+       Iata de exemplu cum arata procedura care testeaza daca s-a apasat o
+tasta ( procedura introdusa doar daca utilizatorul doreste sa faca programul
+in genul prezentarilor cu mai multe planse ):
+
+ procedure AsteaptaOTasta;        { Asteapta utilizatorul sa apese o tasta }
+ const
+   Esc = #27;
+ var
+   Ch : char;
+ begin
+   repeat until KeyPressed;
+   Ch := ReadKey;
+   if ch = #0 then ch := readkey;
+   if Ch = Esc then
+     Halt(0)                      { Daca se apasa ESC se termina programul}
+ end;                             { AsteaptaOTasta; }
+
+       Datorita acestor comentrii pina si un programator incepator poate
+intelege cum functioneaza programul pe care tocmai l-a creat.
+       In continuare va voi prezenta textul inclus in fisierul .PAS in
+momentul in care utilizatorul apasa un anumit buton din meniul cu butoane:
+
+
+     ┌──────┐
+   1.│Iesire│  - Readln;CloseGraph;           AsteaptaOTasta;CloseGraph;
+     └──────┘    End.                  sau    End.
+
+     Daca utilizatorul a creat programul sub forma de prezentare cu mai
+     multe planse, atunci acest utilitar va include in fisierul generat cea
+     de-a doua varianta, altfel se va include prima varianta (deoarece daca
+     nu s-a creat mai mult de o plansa nu s-a definit procedura
+     AsteaptaOTAsta si o incercare de apelare a ei ar produce un mesaj de
+     eroare).
+
+
+     ┌──────┐
+   2.│Nou   │
+     └─┬─┬──┘
+       │ │          ┌──────┐
+       │ └──────────┤  DA  │  -      Daca raspundeti 'DA' la intrebarea :
+       │            └──────┘   " Doriti efect grafic si sonor intre planse ?"
+       │
+       │    Procedure EfectGrafic...;
+       │       Begin
+       │         ...
+       │       End;
+       │     Procedure EfectSonor...;
+       │       Begin
+       │         ...
+       │       End;
+       │     Procedure  AsteaptaOTasta;
+       │       Begin
+       │         ...
+       │       End;
+       │    ...
+       │    Begin
+       │       ...
+       │       EfectSonor...;
+       │       EfectGrafic...;
+       │
+       │    Definirea procedurilor se genereaza doar daca efectul grafic sau
+       │ sonor s-a ales pentru prima data de catre utilizator .
+       │
+       │
+       │            ┌──────┐
+       └────────────┤  NU  │  -      Daca raspundeti 'NU' la intrebarea :
+                    └──────┘    " Doriti efect grafic si sonor intre planse ?"
+
+            Procedure  AsteaptaOTasta;
+               Begin
+                 ...
+               End;
+            ...
+            Begin
+               ...
+               Cleardevice ; AsteaptaOTasta ;
+
+
+     ┌──────┐
+   3.│TipFig│  - In urma alegerii acestei optiuni in fisierul .PAS nu se va
+     └──────┘    include nimic, optiunea avind rol de comutare a unui
+     'stegulet' in programul ARTIST, stegulet care va fi citit de alte
+     comenzi precum Cerc, Elipsa, Bara si astfel ARTIST va decide daca face
+     un desen plin , sau doar conturul obiectului ales.
+
+
+     ┌──────┐
+   4.│TipSpr│  - Const
+     └──────┘       Sprm : byte = 30 ; Sprc : byte = 0;
+                 ...
+
+                 Procedure Spray;
+                    Begin
+                       ...
+                    end;
+
+                    Begin
+                      ...
+                      Sprm:=... ; Sprc:=...;
+
+     Se obseva ca se introduce in sectiunea Const declararea variabilelor ,
+in sectiunea de declarare  a   procedurilor  se introduce procedura Spray
+(doar daca nu s-au mai introdus pina acum) iar in corpul principal al
+programului se introduc doua instructiuni de atribuire, variabilele Sprm si
+Sprc fiind folosite de procedura spray si semnificind marimea si respectiv
+tipul spray-ului folosit ( Sprc:=0 => spray monocrom, Sprc:=1 => multicolor),
+variabile care vor fi interpretate de procedura Spray
+
+
+     ┌──────┐
+   5.│TipLin│  - SetLineStyle ( ... , ... , ... ) ;
+     └──────┘
+
+     ┌──────┐
+   6.│TipUmp│  - SetFillStyle   ( ... , ... ) ;    sau
+     └──────┘
+                 Const
+                    Model... : FillPaternType = ( ... , ... , ... , ... ,
+                                                  ... , ... , ... , ... ) ;
+                    Begin
+                      ...
+                      SetFillPattern ( ... , ... ) ;
+
+     Daca utilizatorul a ales un model de umplere predefinit in BP 7.0 ,
+atunci se va folosi in fisierul .PAS prima varianta, altfel daca modelul ales
+este unul definit de programul ARTIST se va folosi prima varianta. Declaratia
+din  sectiunea  Const  se  va  introduce  doar daca acel model nu  a mai fost
+selectat pina in acel moment. Model... reprezinta o constanta de tipul
+FillPatternType si contine imaginea raster a unei zone 8x8 de pe ecran ( un
+bit 1 inseamna pixel de culoare, un bit 0 inseamna un pixel de culoarea
+fontului).Iata de exemplu cum arata definirea modelului de umplere 'caramida'
+
+  Model1 : FillPatternType = ($02, $02, $FF, $20, $20, $20, $FF, $02);
+
+
+
+     ┌──────┐
+   7.│TipTxt│  - SetTextStyle ( ... , HorizDir , ... );
+     └──────┘
+
+
+     ┌──────┐
+   8.│Trasat│  - MoveTo ( ... , ... );
+     └──────┘    LineTo ( ... , ... );
+                 ...
+                 LineTo ( ... , ... );
+                 MoveTo ( ... , ... );
+
+     'MoveTo' se introduce doar cind se apasa prima data butonul sting al
+mouse-ului , iar cit timp acesta se tine apasat se genereaza instructiuni
+'LineTo' (aceasta generare este invizibila pentru utilizator).
+     Observatie : Folosirea comenzii <Trasat> are ca rezultat generarea unui
+program de dimensiuni ceva mai mari decit in mod obisnuit. Se recomanda
+folosirea pe cit posibila a celorlalte comenzi ale utilitarului (linie,cerc,
+elipsa ,etc);
+
+
+     ┌──────┐
+   9.│Linie │  - Line ( ... , ... , ... , ... ) ;
+     └──────┘
+
+
+     ┌──────┐
+  10.│Figuri│
+     └┬─┬─┬─┘
+      │ │ │         ┌──────┐
+      │ │ └─────────┤ Bara │  - Rectangle ( ... , ... , ... , ... ) ; sau
+      │ │           └──────┘    Bar       ( ... , ... , ... , ... ) ;
+      │ │
+      │ │                Se va alege prima varianta daca tipul figurii ales
+      │ │            este 'gol' , sau a doua varianta daca figura aleasa este
+      │ │            'figura plina'
+      │ │
+      │ │           ┌──────┐
+      │ └───────────┤Triun.│  - Line ( ... , ... , ... , ... ) ;
+      │             └──────┘    Line ( ... , ... , ... , ... ) ;
+      │                         Line ( ... , ... , ... , ... ) ;
+      │
+      │                  Triunghiul se deseneaza prin trei linii deoarece
+      │              Pascalul nu are o procedura predefinita pentru desenarea
+      │              de triunghiuri.
+      │
+      │             ┌──────┐
+      └─────────────┤Paral.│  - Line ( ... , ... , ... , ... ) ;
+                    └──────┘    Line ( ... , ... , ... , ... ) ;
+                                Line ( ... , ... , ... , ... ) ;
+                                Line ( ... , ... , ... , ... ) ;
+
+                         Paralelogramul se deseneaza prin patru linii deoarece
+                     Pascal-ul nu are o procedura predefinita pentru desenarea
+                     de paralelograme.
+
+
+     ┌──────┐
+  11.│ Cerc │  - Circle      ( ... , ... , ... ) ;   sau
+     └──────┘    FillEllipse ( ... , ... , ... , ... ) ;
+
+                         Se va genera prima varianta daca tipul figurii este
+                     'goala' sau a doua varianta daca este 'figura plina'.
+                     In procedura FillEllipse parametrii 3 si 4 (semnificind
+                     Razax si Razay) sunt egali ( raza cercului este contanta)
+
+
+     ┌──────┐
+  12.│Elipsa│  - Ellipse     ( ... , ... , 0 , 360 , ... , ... ) ;   sau
+     └──────┘    FillEllipse ( ... , ... , ... , ... ) ;
+
+                         Se va genera prima varianta daca tipul figurii este
+                     'goala' sau a doua varianta daca este 'figura plina'.
+
+     ┌──────┐
+  13.│Spray │  - Const
+     └──────┘       Sprm : byte = 30 ; Sprc : byte = 0;
+                 ...
+
+                 Procedure Spray;
+                    Begin
+                       ...
+                    end;
+
+                    Begin
+                      ...
+                      Spray ( ... , ... );
+
+     Se obseva ca se introduce in sectiunea Const declararea variabilelor ,
+in sectiunea de declarare  a   procedurilor  se introduce procedura Spray
+(doar daca nu s-au mai introdus pina acum) iar in corpul principal al
+programului se introduce o intructiune de apel pentru procedura Spray.Aceasta
+procedura va tine seama de constantel Sprm & Sprc setate in meniul TipSpray.
+
+
+     ┌──────┐
+  14.│Umple │  - FloodFill ( ... , ... , GetColor ) ;
+     └──────┘
+     Se observa ca se umple o figura delimitata de culoarea de scriere
+curenta.
+
+
+     ┌──────┐
+  15.│Print │  - Aceasta comanda nu genereaza nici o instructiune in
+     └──────┘  fisierul .PAS , rolul acestei comenzi este acela de a oferi
+               utilizatorului posibilitatea de a-si tipari desenul realizat,
+               daca dispune de o imprimanta compatibila cu Epson FX-1050.
+
+
+     ┌──────┐
+  16.│ Text │  - OutTextXy ( ... , ... , ' ... ' ) ;
+     └──────┘
+                 Textul dintre ghilimele ( ' ... ' ) este cel pe care il
+               introduce utilizatorul. (Terminarea introducerii textului se
+               face prin apasarea tastei ENTER sau a butonului sting al
+               mouse-ului.
+
+
+
+
+
